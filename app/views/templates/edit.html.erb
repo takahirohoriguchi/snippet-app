@@ -1,0 +1,38 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+    <%= link_to image_tag('snippet-1.png' , size: '185x50',class:"furima-icon"), "/" %>
+    <div class='snippet-name-header2'>Snippet</div>
+  </header>
+  <div class="items-sell-main">
+  <h2 class="items-sell-title">テンプレート</h2>
+  <%= form_with model: [@input_summary, @template], local: true do |f| %>
+    <%= render 'shared/error_messages', model: @template %>
+    <%# 出品画像 %>
+
+    <%# /出品画像 %>
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        タイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"グループ名（必須 40文字まで)", maxlength:"40" %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          内容
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :info, class:"items-text", id:"item-info",rows:"7" ,maxlength:"1000" %>
+        <input value="<%= @template.id%>" type="hidden" name='template_id'>
+      </div>
+    </div>
+      <%# 下部ボタン %>
+      <div class="sell-btn-contents">
+        <%= f.submit "登録" ,class:"sell-btn" %>
+        <%=link_to 'もどる', template_input_summary_path(@input_summary.id), class:"back-btn" %>
+      </div>
+      <%# /下部ボタン %>
+    </div>
+  <% end %>
+
+</div>

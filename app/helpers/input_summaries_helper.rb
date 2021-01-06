@@ -1,0 +1,2 @@
+module InputSummariesHelper
+end

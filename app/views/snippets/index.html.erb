@@ -1,0 +1,84 @@
+<%# <div class="wrapper">
+  <div class="side-bar"> %>
+    <%# <%= render "side_bar" %> 
+  <%# </div>
+  <div class="chat"> %>
+    <%# <%= render "main_chat" %> 
+  <%# </div>
+</div> %>
+
+<%= render "shared/header" %>
+<div class='main'>
+
+  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+  
+  <%# //FURIMAの特徴 %>
+
+  <%# 商品一覧 %>
+  <div class='item-contents'>
+    <h2 class='title'>Snippet</h2>
+    <%= link_to '', class: "subtitle" %>
+    <ul class='item-lists'>
+      <% @snippets.each do |snippet|%>
+      <li class='list'>
+        <%= link_to snippet_input_summaries_path(snippet.id) do %>
+        <div class='item-img-content'>
+          <%= image_tag 'star-icon.png', class: "item-img" %>
+          <div class='sold-out'>
+            <span><%= snippet.group_name %></span>
+          </div>
+        </div>
+        <% end %>
+        <div class='item-info'>
+          
+          <%= link_to edit_snippet_path(snippet.id) do %>
+            <div class='select-submit'>
+              <%= "編集" %>
+            </div>
+          <% end %>
+              <%= link_to snippet_path(snippet.id), method: :delete do %>
+              <div class='select-submit'>
+                <%= "削除" %>
+              </div>
+              <% end %>
+            </h3>
+            <%# <span><%= snippet.info %> 
+            <%# <div class='star-btn'>
+              <%= image_tag "star-icon.png", class:"star-icon" %> 
+              <%# <span class='star-count'>0</span> %>
+            <%# </div> %>
+
+        </div>
+        
+      </li>
+      <% end %>
+      <%# 商品がない場合のダミー %>
+      <% if false %>
+      <li class='list'>
+        <%= link_to '#' do %>
+        <%= image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "item-img" %>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            商品を出品してね！
+          </h3>
+          <div class='item-price'>
+            <span>99999999円<br>(税込み)</span>
+            <div class='star-btn'>
+              <%= image_tag "star-icon.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </li>
+      <% end %>
+      <%# //商品がない場合のダミー %>
+    </ul>
+  </div>
+  <%# //商品一覧 %>
+</div>
+<%= link_to(new_snippet_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>Make Up</span>
+  <%= image_tag 'search-icon.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
+<%= render "shared/footer" %> 

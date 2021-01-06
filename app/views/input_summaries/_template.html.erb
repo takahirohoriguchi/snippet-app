@@ -1,0 +1,23 @@
+<div class="message", data-id="<%= template.id%>">
+  <div class="upper-message">
+    <div class="edit-delete">
+      <div class="message-title">タイトル</div>
+      <div class="sample-icon">
+        <%= link_to edit_input_summary_template_path(@input_summary.id, template_id: template.id) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+        <%= link_to input_summary_template_path(@input_summary.id, template_id: template.id), method: :delete do %>
+          <i class="fas fa-trash-alt"></i>   
+        <% end %>
+      </div>
+    </div>
+    <div class="message-user">
+    <!-- 投稿したユーザー名情報を出力する -->
+      <%= template.title%>
+    </div>
+  </div>
+  <div class="lower-message">
+    <div class="message-info">内容</div>
+    <div class="message-content" , data-id="<%= template.id%>"><textarea class="message-con"><%= template.info%></textarea></div>
+  </div>
+</div>

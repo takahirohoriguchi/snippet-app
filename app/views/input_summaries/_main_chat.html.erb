@@ -1,0 +1,30 @@
+
+<div id="chat-header">
+<% if @template != nil %>
+  <%= form_with model: [@input_summary, @template], html: {class: "form"}, local: true do |f|%>
+  <div class="form-all">
+    <div class="form-input">
+      <%= f.text_field :title, class: 'form-title', placeholder: 'タイトルを入力してください' %>
+    </div>
+    <div class="form-input">
+      <%= f.text_area :info, class: 'form-message', placeholder: 'スニペットを入力してください', rows:"7" ,maxlength:"1000" %>
+    </div>
+    <div class="form-input">
+      <%= f.submit '追加', class: 'form-submit' %>
+    </div>
+    <div class="form-input">
+      <div class='back-submit' >戻る</div>
+    </div>
+  </div>
+  <% end %>
+<% end %>
+</div>
+<div id="messages">
+  <%= render partial: 'template', collection: @templates%> 
+</div>
+<% if @template != nil %>
+<div id="text-btn">
+  <span class='purchase-btn-text'>Make Up</span>
+  <%= image_tag 'search-icon.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+</div>
+<% end %>

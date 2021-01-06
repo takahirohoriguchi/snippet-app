@@ -1,0 +1,33 @@
+<div class="side-bar-header">
+  <div class="header-name">
+    <%= link_to '#' do %> 
+      <%= @snippet.group_name %> 
+    <% end %> 
+  </div>
+  <div class="all-room">
+    <div class="create-room">
+      <%= link_to "フォーム追加", new_snippet_input_summary_path(@snippet.id)  %>
+    </div>
+    <div class="create-room">
+      <%= link_to "トップに戻る", root_path  %>
+    </div>
+  </div>
+</div>
+
+<div class="rooms">
+  <% @input_summaries.each do |summary| %> 
+    <div class="room",data-num-id="<%= summary.id%>"> 
+
+      <% if @input_summary&.id == summary.id %>
+        <div class="room-name1">
+          <%= link_to summary.summary_name, template_input_summary_path(summary.id) %> 
+        </div>
+      <% else %>
+        <div class="room-name2">
+          <%= link_to summary.summary_name, template_input_summary_path(summary.id) %> 
+        </div>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>

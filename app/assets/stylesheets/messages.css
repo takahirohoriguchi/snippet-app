@@ -1,0 +1,322 @@
+.wrapper {
+  display: flex;
+}
+.side-bar {
+  background-color:  #FAFAFA;
+  width: 300px;
+  height: 100vh;
+}
+
+.side-bar-header {
+  height: 100px;
+  padding: 0 20px;
+  background-color:  #FAFAFA;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(var(--sk_foreground_low,29,28,29),.13);
+}
+
+.header-name a{
+  font-size: 16px;
+  color: #001A5E;
+  text-decoration: none;
+}
+
+.create-room {
+  font-size: 10px;
+  height: 40px;
+  line-height: 60px;
+}
+
+.all-room{
+  font-size: 10px;
+  height: 100px;
+  
+}
+
+.create-room a {
+  border: 1px solid #001A5E;
+  padding: 10px;
+  color:  #001A5E;
+  text-decoration: none;
+  background-color: #ffffff;
+}
+
+.rooms {
+  background-color: #FAFAFA;
+  height: calc(100vh - 100px);
+  /* padding: 0 20px; */
+  border: 1px solid rgba(var(--sk_foreground_low,29,28,29),.13);
+  border-width: 1em 0em 0em 0em;
+}
+
+
+.room {
+  padding: 20px 20px 20px 20px;
+  color: #001A5E;
+  border: 1px solid rgba(var(--sk_foreground_low,29,28,29),.13);
+  border-width: 0em 1em 1em 1em;
+}
+
+
+.active{
+  background-color: #001A5E;
+  color: white;
+}
+
+
+.room-name1 a {
+  text-decoration: none;
+  color: red;
+}
+.room-name2 a {
+  text-decoration: none;
+  color: #001A5E;
+}
+
+.chat {
+  width: calc(100% - 300px);
+}
+
+#chat-header {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  overflow: scroll;
+  display: none;
+}
+
+.header-title {
+  color: #333;
+  font-size: 24px;
+  margin-top: 36px;
+}
+
+.header-button {
+  margin-top: 40px;
+}
+
+.header-button a {
+  text-decoration: none;
+  border: 1px solid darkred;
+  color: darkred;
+  padding: 20px;
+}
+
+#messages {
+  background-color: #ffffff;
+  height: 100Vh;
+  /* padding: 46px 40px 0; */
+  overflow: scroll;
+  border: 1px solid rgba(var(--sk_foreground_low,29,28,29),.13);
+  
+}
+
+.message {
+  margin: 10px 0;
+  border: 1px solid rgba(var(--sk_foreground_low,29,28,29),.13);
+  padding: 0px 7px;
+}
+.edit-delete {
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+  margin-top: 10px;
+}
+
+.upper-message{
+}
+
+.fa-edit ,.fa-trash-alt{
+  color: black;
+  margin-left: 5px;
+}
+
+.message-title {
+  background: #001A5E;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px;
+}
+.message-info{
+  width: 30px;
+  height: 20px;
+  background: #001A5E;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+
+
+.message-user {
+  color: #434a54;
+  font-size: 16px;
+}
+
+.message-date {
+  color: #999;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.lower-message {
+  margin-top: 10px;
+}
+
+.message-content {
+  color: #434a54;
+  font-size: 14px;
+  /* white-space: nowrap; */
+  width: 100%;
+  height: 100%;
+  /* margin-bottom: 40px; */
+  /* white-space: pre-wrap; */
+}
+.message-con {
+  color: #434a54;
+  font-size: 14px;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(var(--sk_foreground_low,29,28,29),.13);
+}
+
+.form {
+  background-color: #ffffff;
+  height: 100vh;
+  padding: 150px 40px;
+  display: flex;
+  border: 1px solid rgba(var(--sk_foreground_low,29,28,29),.13);
+  width: 100%;
+}
+
+.form-all {
+  width: 100%;
+}
+
+.form-input {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.form-title {
+  border: none;
+  height: 30px;
+  width: 100%;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  background-color: #DDDDDD;
+  border-radius: 4px;
+}
+
+.form-message {
+  height: 250px;
+  width: 100%;
+  padding-left: 10px;
+  background-color: #DDDDDD;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+  border-radius: 4px;
+}
+
+.form-submit {
+  width: 100%;
+  height: 60px;
+  background-color: #001A5E;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-left: 15px;
+  padding: 0 20px;
+  border-radius: 50px;
+  box-shadow: 0px 3px lightgrey;
+  outline: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.form-submit:active {
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+}
+
+.back-submit {
+  width: 200px;
+  height: 60px;
+  background-color: lightgrey;
+  border: none;
+  color: black;
+  font-size: 16px;
+  margin-left: 15px;
+  padding: 0 20px;
+  border-radius: 50px; 
+  box-shadow: 0px 3px #001A5E;
+  outline: none;
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 60px;
+}
+
+.back-submit:active {
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+}
+
+.select-submit {
+  background-color: #001A5E;
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 60px;
+  padding: 0 20px;
+  border-radius: 50px;
+  box-shadow: 0px 3px lightgrey;
+  outline: none;
+  cursor: pointer;
+  line-height: 60px;
+}
+.select-submit:active {
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+}
+
+.form-image {
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  padding: 12px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#text-btn {
+  width: 120px;
+  background: lightgray;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  
+}

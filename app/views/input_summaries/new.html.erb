@@ -1,0 +1,29 @@
+
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+    <%= link_to image_tag('snippet-1.png' , size: '185x50',class:"furima-icon"), "/" %>
+    <div class='snippet-name-header2'>Snippet</div>
+  </header>
+  <div class="items-sell-main">
+  <h2 class="items-sell-title"><%= @snippet.group_name %></h2>
+  <%= form_with model: [@snippet, @input_summary] , local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <%# 出品画像 %>
+    <%# /出品画像 %>
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        タブ名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :summary_name, class:"items-text", id:"item-name", placeholder:"グループ名（必須 40文字まで)", maxlength:"40" %>
+    </div>
+      <%# 下部ボタン %>
+      <div class="sell-btn-contents">
+        <%= f.submit "登録" ,class:"sell-btn" %>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
+      <%# /下部ボタン %>
+    </div>
+  <% end %>
+</div>
