@@ -2,6 +2,9 @@ InputSummary.create!([
   {summary_name: "view実装", snippet_id: 1},
   {summary_name: "テスト実装", snippet_id: 1},
   {summary_name: "モデル実装", snippet_id: 1},
+  {summary_name: "model", snippet_id: 2},
+  {summary_name: "その他", snippet_id: 2},
+  {summary_name: "テスト", snippet_id: 2},
   {summary_name: "js", snippet_id: 3},
   {summary_name: "controller", snippet_id: 3},
   {summary_name: "formObject", snippet_id: 3},
@@ -18,11 +21,8 @@ InputSummary.create!([
   {summary_name: "issue1~3", snippet_id: 8},
   {summary_name: "issue4~6", snippet_id: 8},
   {summary_name: "その他", snippet_id: 8},
-  {summary_name: "その他", snippet_id: 2},
-  {summary_name: "テスト", snippet_id: 2},
   {summary_name: "指摘", snippet_id: 9},
   {summary_name: "LGTM", snippet_id: 9},
   {summary_name: "view", snippet_id: 10},
-  {summary_name: "controller", snippet_id: 11},
-  {summary_name: "model", snippet_id: 2}
+  {summary_name: "controller", snippet_id: 11}
 ])
