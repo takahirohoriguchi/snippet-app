@@ -1,5 +1,5 @@
 class SnippetsController < ApplicationController
-  before_action :set_snippet, only: [:edit, :update, :destroy]
+  before_action :set_snippet, only: [:edit, :update, :destroy, :delete]
   before_action :user_check, only:[:edit, :update, :destroy]
 
   def index
@@ -33,8 +33,14 @@ class SnippetsController < ApplicationController
   end
 
   def destroy 
-    @snippet.destroy
+    if @snippet.user_id == current_user.id
+      @snippet.destroy
+    end
     redirect_to root_path
+  end
+
+  def delete
+    
   end
 
   private

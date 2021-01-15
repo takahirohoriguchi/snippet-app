@@ -2,12 +2,10 @@ class InputSummariesController < ApplicationController
   before_action :set_snippet, only: [:index, :new, :create]
 
   def index
-    @snippet = Snippet.find(params[:snippet_id])
     @input_summaries = @snippet.input_summaries
   end
 
   def new
-    @snippet = Snippet.find(params[:snippet_id])
     @input_summary = InputSummary.new
   end
 

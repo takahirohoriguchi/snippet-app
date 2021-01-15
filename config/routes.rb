@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "snippets#index"
   resources :snippets do 
+    member do
+      get "delete"
+    end
     resources :input_summaries do
     end
   end

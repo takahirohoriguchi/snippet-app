@@ -1,5 +1,6 @@
 class TemplatesController < ApplicationController
   before_action :set_template, only: [:edit, :update, :destroy]
+  
   def create
     @template = Template.new(template_params)
     if @template.save

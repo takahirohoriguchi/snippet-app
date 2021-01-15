@@ -1,0 +1,25 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+    <%= link_to image_tag('snippet-1.png' , size: '185x50',class:"furima-icon"), "/" %>
+    <div class='snippet-name-header2'>Snippet</div>
+  </header>
+  <div class="items-sell-main">
+    <% if @snippet.user_id == current_user.id %>
+      <h2 class="items-sell-title">本当に削除しますか？ </h2>
+    <% else %>
+      <h2 class="items-sell-title">削除したい場合は管理者に連絡してください</h2>
+    <% end %>
+      <%# 下部ボタン %>
+      <div class="sell-btn-contents">
+        <% if @snippet.user_id == current_user.id %>
+          <div class="form-input">
+            <%= link_to '削除',snippet_path(@snippet.id), method: :delete , class: 'form-submit'  %>
+          </div>
+        <% end %>
+        <div class="form-input">
+          <%= link_to 'もどる', root_path, class:"back-submit" %>
+        </div>
+      </div>
+      <%# /下部ボタン %>
+  </div>
+</div>
